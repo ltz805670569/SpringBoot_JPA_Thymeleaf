@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/vue.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+</head>
+<body>
+<div>
+    <form class="form-horizontal" role="form" id="form_data">
+        <div class="form-group">
+            <label for="rolename" class="col-sm-2 control-label">角色名</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="rolename">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="roleinfo" class="col-sm-2 control-label">角色信息</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="roleinfo">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-4">
+                <button type="button" class="btn btn-info btn-sm" onclick="addUser()">新增</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+   function addUser() {
+       var rolename = $('input').eq(0).val();
+       var roleinfo = $('input').eq(1).val();
+       $.ajax({
+           url:"/role/addUser",
+           type:"post",
+           data:{
+               "rolename":rolename,
+               "roleinfo":roleinfo
+           },
+           success:function (data) {
+               var msg = data.msg;
+               if(msg === "success"){
+                   alert("新增角色成功");
+               }
+           }
+       });
+   }
+</script>
+</body>
+</html>

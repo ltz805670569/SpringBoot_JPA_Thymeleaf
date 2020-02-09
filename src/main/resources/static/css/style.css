@@ -1,0 +1,22 @@
+.main{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+}
+.sel_btn{
+    width: 300px;
+    display: inline-block;
+}
+.add_btn{
+    display: inline-block;
+    position: relative;
+    left: 1075px;
+    width: 100px;
+}
+.pageContent{
+    width: 200px;
+    height: 100px;
+    margin: 0 auto;
+    text-align: center;
+}

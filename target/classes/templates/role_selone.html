@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/vue.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+</head>
+<body>
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>角色编号</th>
+            <th>角色名</th>
+            <th>角色信息</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td th:text="${role.getRoleid()}"></td>
+            <td th:text="${role.getRolename()}"></td>
+            <td th:text="${role.getRoleinfo()}"></td>
+            <td><button class="btn btn-danger btn-sm">修改</button><button class="btn btn-danger btn-sm">删除</button></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
